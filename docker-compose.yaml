@@ -1,0 +1,26 @@
+version: '3'
+services:
+  php:
+    build:
+      context: .
+      dockerfile: ./docker-config/php/Dockerfile
+    expose:
+      - 9000
+    ports:
+      - 80:80
+    volumes:
+      - cpresources:/app/web/cpresources
+    environment:
+      ENVIRONMENT: dev
+      DB_DRIVER: mysql
+      DB_SERVER: database
+      DB_USER: project
+      DB_PASSWORD: project
+      DB_DATABASE: project
+      DB_SCHEMA: public
+      DB_TABLE_PREFIX: craft_
+      SITE_URL: http://localhost
+      SECURITY_KEY: AAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+volumes:
+  cpresources:
