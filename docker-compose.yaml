@@ -6,8 +6,6 @@ services:
       dockerfile: ./docker-config/php/Dockerfile
     expose:
       - 9000
-    ports:
-      - 80:80
     volumes:
       - cpresources:/app/web/cpresources
     environment:
