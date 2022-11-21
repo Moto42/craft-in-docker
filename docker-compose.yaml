@@ -18,16 +18,16 @@ services:
     volumes:
       - cpresources:/app/web/cpresources
     environment:
-      ENVIRONMENT: dev
-      DB_DRIVER: mysql
-      DB_SERVER: database
-      DB_USER: project
-      DB_PASSWORD: project
-      DB_DATABASE: project
-      DB_SCHEMA: public
-      DB_TABLE_PREFIX: craft_
-      SITE_URL: http://localhost
-      SECURITY_KEY: AAAAAAAAAAAAAAAAAAAAAAAAAAA
+      CRAFT_ENVIRONMENT: dev
+      CRAFT_DB_DRIVER: mysql
+      CRAFT_DB_SERVER: database
+      CRAFT_DB_USER: project
+      CRAFT_DB_PASSWORD: project
+      CRAFT_DB_DATABASE: project
+      CRAFT_DB_SCHEMA: public
+      CRAFT_DB_TABLE_PREFIX: craft_
+      CRAFT_SITE_URL: http://localhost
+      CRAFT_SECURITY_KEY: AAAAAAAAAAAAAAAAAAAAAAAAAAA
 
   database:
       image: mariadb:10.3
