@@ -60,4 +60,4 @@ services:
 volumes:
   db-data:
   cpresources:
-  nodemodules:
+  node-modules:
