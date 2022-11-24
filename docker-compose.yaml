@@ -8,6 +8,7 @@ services:
       - 80:80
     volumes:
       - cpresources:/var/www/html/web/cpresources
+      - ./src/web:/var/www/html/web
 
   php:
     build:
@@ -17,6 +18,12 @@ services:
       - 9000
     volumes:
       - cpresources:/app/web/cpresources
+      - ./src/composer.json:/app/composer.json
+      - ./src/composer.lock:/app/composer.lock
+      - ./src/config:/app/config
+      - ./src/modules:/app/modules
+      - ./src/templates:/app/templates
+      - ./src/web:/app/web
     environment:
       CRAFT_ENVIRONMENT: dev
       CRAFT_DB_DRIVER: mysql
