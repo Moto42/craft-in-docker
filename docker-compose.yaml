@@ -1,5 +1,13 @@
 version: '3'
 services:
+  buildchain:
+    build:
+      context: .
+      dockerfile: ./docker-config/buildchain/Dockerfile
+    volumes:
+      - ./docker-config/buildchain/package.json:/project/package.json
+      - ./src:/project/src
+
   nginx:
     build:
       context: .
